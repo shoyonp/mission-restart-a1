@@ -1,7 +1,7 @@
 // display products function
 const displayProducts = (products, containerId, limit) => {
   const items = limit ? products.slice(0, limit) : products;
-  container = document.getElementById(containerId);
+  const container = document.getElementById(containerId);
   container.innerHTML = "";
 
   items.forEach((product) => {
@@ -47,6 +47,29 @@ const displayProducts = (products, containerId, limit) => {
     container.append(div);
   });
 };
+
+// display category buttons
+const displayCategoryBtn = (categories) => {
+  const btnContainer = document.getElementById("category-container");
+//   btnContainer.innerHTML = "";
+  for (let category of categories) {
+    console.log(category);
+    const btnDiv = document.createElement("div");
+    btnDiv.innerHTML = `
+  <button class="btn btn-primary">${category}</button>
+  `;
+    btnContainer.append(btnDiv);
+  }
+};
+
+// category buttons
+const getCategoryBtn = async () => {
+  const url = "https://fakestoreapi.com/products/categories";
+  const res = await fetch(url);
+  const data = await res.json();
+  displayCategoryBtn(data);
+};
+getCategoryBtn();
 
 // get all products
 const getProducts = async (containerId, limit) => {
