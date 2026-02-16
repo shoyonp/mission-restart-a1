@@ -1,8 +1,10 @@
-const displayTrendngPdc = (products) => {
-  const container = document.getElementById("container");
+// display products function
+const displayProducts = (products, containerId, limit) => {
+  const items = limit ? products.slice(0, limit) : products;
+  container = document.getElementById(containerId);
   container.innerHTML = "";
 
-  products.slice(0,3).forEach((product) => {
+  items.forEach((product) => {
     const div = document.createElement("div");
     div.innerHTML = `
      <div class="card bg-base-100 shadow-md h-full">
@@ -46,11 +48,18 @@ const displayTrendngPdc = (products) => {
   });
 };
 
-const getProducts = async () => {
+// get all products
+const getProducts = async (containerId, limit) => {
   const url = "https://fakestoreapi.com/products";
   const res = await fetch(url);
   const data = await res.json();
-  displayTrendngPdc(data);
+  displayProducts(data, containerId, limit);
 };
 
-getProducts();
+// condition for data load in diffrent html page
+
+if (document.getElementById("home-products")) {
+  getProducts("home-products", 6);
+} else if (document.getElementById("all-products")) {
+  getProducts("all-products");
+}
