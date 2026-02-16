@@ -48,11 +48,21 @@ const displayProducts = (products, containerId, limit) => {
   });
 };
 
+// for remove all active class
+const removeActive = () => {
+  const ctgButtons = document.querySelectorAll(".ctg-btn");
+  //   console.log(ctgButtons);
+  ctgButtons.forEach((btn) => btn.classList.remove("active"));
+};
+
 // load category products
 const loadCategoryProduct = async (category) => {
   const url = `https://fakestoreapi.com/products/category/${category}`;
   const res = await fetch(url);
   const data = await res.json();
+  removeActive();
+  const clickedBtn = document.getElementById(category);
+  clickedBtn.classList.add("active");
   displayCategoryPdc(data);
 };
 
@@ -112,7 +122,8 @@ const displayCategoryBtn = (categories) => {
   for (let category of categories) {
     // console.log("category after loop", category);
     const button = document.createElement("button");
-    button.className = "btn btn-primary";
+    button.id = category;
+    button.className = "btn btn-outline rounded-md ctg-btn";
     button.innerText = category;
     button.addEventListener("click", () => {
       loadCategoryProduct(category);
@@ -141,6 +152,7 @@ const getProducts = async (containerId, limit) => {
   //   this will execute when clicking all product button
   const allProBtn = document.getElementById("for-all-product");
   allProBtn.addEventListener("click", () => {
+    allProBtn.classList.add("active")
     containerId = "all-products";
     displayProducts(data, containerId);
   });
