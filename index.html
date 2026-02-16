@@ -22,9 +22,77 @@
     />
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
-    <button class="btn btn-primary">Primary</button>
-    <span class=""><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+    <!-- Navbar Section-->
+    <header>
+      <div class="navbar bg-base-100 w-11/12 mx-auto">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="-1"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Home</a></li>
+              <li><a>Products</a></li>
+              <li><a>About</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <a class="text-xl font-bold text-blue-700">SwiftCart</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li><a>Products</a></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class=""><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+    </header>
+    <!-- Banner Section-->
+    <section>
+      <div
+        class="relative bg-[url('./Assets/banner-image.png')] bg-cover bg-center min-h-[500px] flex items-center"
+      >
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative w-11/12 mx-auto space-y-4">
+          <h1 class="text-3xl md:text-6xl font-bold text-white">
+            Best Collection For You
+          </h1>
+          <p class="text-gray-300 max-w-xl">
+            Discover the latest trends in fashion, electronics, and more. Shope
+            with confidence and style at SwiftCart.
+          </p>
+          <button class="btn btn-primary">Shop Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- why choose us Section-->
+    <section>i am</section>
+    <!-- Product section -->
+    <section>i am trending Product</section>
+    <!-- Footer section -->
+    <footer>i am footer</footer>
 
     <!-- js file linked -->
     <script src="app.js"></script>
