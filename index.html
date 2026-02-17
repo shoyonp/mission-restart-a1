@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,6 +20,13 @@
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    />
+    <!-- ggl font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -55,7 +62,9 @@
               <li><a>Contact</a></li>
             </ul>
           </div>
-          <a class="text-xl font-bold text-blue-700">SwiftCart</a>
+          <a href="./index.html" class="text-xl font-bold"
+            ><span class="text-xl font-bold text-blue-700">Swift</span> Cart</a
+          >
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
@@ -70,112 +79,116 @@
         </div>
       </div>
     </header>
-    <!-- Banner Section-->
-    <section class="mb-10">
-      <div
-        class="relative bg-[url('./Assets/banner-image.png')] bg-cover bg-center min-h-[500px] flex items-center"
-      >
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative w-11/12 mx-auto space-y-4">
-          <h1 class="text-3xl md:text-6xl font-bold text-white">
-            Best Collection For You
-          </h1>
-          <p class="text-gray-300 max-w-xl">
-            Discover the latest trends in fashion, electronics, and more. Shope
-            with confidence and style at SwiftCart.
-          </p>
-          <button class="btn btn-primary">Shop Now</button>
-        </div>
-      </div>
-    </section>
-    <!-- why choose us Section-->
-    <section class="w-11/12 mx-auto mb-10">
-      <!-- content heading -->
-      <div class="text-center space-y-3 mb-10">
-        <h2 class="text-4xl font-bold">Why Choose Us</h2>
-        <p class="text-gray-600">
-          We provide the best shooping experience with top-notch services.
-        </p>
-      </div>
-      <!--main content -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
-        <!-- service card -->
-        <div class="bg-gray-100 rounded-lg p-7 relative">
-          <span
-            class="bg-gray-200 rounded-lg text-blue-700 p-3 absolute left-5 -top-6"
-            ><i class="fa-regular fa-truck"></i
-          ></span>
 
-          <h4 class="font-semibold">Fast Delivery</h4>
+    <div class="min-h-[calc(100vh-190px)]">
+      <!-- Banner Section-->
+      <section class="mb-10">
+        <div
+          class="relative bg-[url('./Assets/banner-image.png')] bg-cover bg-center min-h-[500px] flex items-center"
+        >
+          <div class="absolute inset-0 bg-black/50"></div>
+          <div class="relative w-11/12 mx-auto space-y-4">
+            <h1 class="text-3xl md:text-6xl font-bold text-white">
+              Best Collection For You
+            </h1>
+            <p class="text-gray-300 max-w-xl">
+              Discover the latest trends in fashion, electronics, and more.
+              Shope with confidence and style at SwiftCart.
+            </p>
+            <button class="btn btn-primary">Shop Now</button>
+          </div>
+        </div>
+      </section>
+      <!-- feature Section-->
+      <section class="w-11/12 mx-auto mb-10">
+        <!-- content heading -->
+        <div class="text-center space-y-3 mb-16">
+          <h2 class="text-4xl font-bold">Why Choose Us</h2>
           <p class="text-gray-600">
-            Get your orders delivered to your doorstep quickly and effciently.
+            We provide the best shooping experience with top-notch services.
           </p>
         </div>
-        <!-- service card -->
-        <div class="bg-gray-100 rounded-lg p-7 relative">
-          <span
-            class="bg-gray-200 rounded-lg text-blue-700 p-3 absolute left-5 -top-6"
-            ><i class="fa-solid fa-headphones"></i
-          ></span>
+        <!--main content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
+          <!-- service card -->
+          <div class="bg-gray-100 rounded-lg p-7 relative">
+            <span
+              class="bg-blue-100 rounded-lg text-blue-700 p-3 absolute left-5 -top-6"
+              ><i class="fa-regular fa-truck"></i
+            ></span>
 
-          <h4 class="font-semibold">24/7 Support</h4>
-          <p class="text-gray-600">
-            Our support team is available around the clock to asist you.
-          </p>
-        </div>
-        <!-- service card -->
-        <div class="bg-gray-100 rounded-lg p-7 relative">
-          <span
-            class="bg-gray-200 rounded-lg text-blue-700 p-3 absolute left-5 -top-6"
-            ><i class="fa-solid fa-shield-halved"></i
-          ></span>
+            <h4 class="font-semibold">Fast Delivery</h4>
+            <p class="text-gray-600">
+              Get your orders delivered to your doorstep quickly and effciently.
+            </p>
+          </div>
+          <!-- service card -->
+          <div class="bg-gray-100 rounded-lg p-7 relative">
+            <span
+              class="bg-green-100 rounded-lg text-green-700 p-3 absolute left-5 -top-6"
+              ><i class="fa-solid fa-headphones"></i
+            ></span>
 
-          <h4 class="font-semibold">Secure Payment</h4>
-          <p class="text-gray-600">
-            Experience safe and secure transactions with our encrypted payment
-            systems.
-          </p>
-        </div>
-        <!-- service card -->
-        <div class="bg-gray-100 rounded-lg p-7 relative">
-          <span
-            class="bg-gray-200 rounded-lg text-blue-700 p-3 absolute left-5 -top-6"
-            ><i class="fa-solid fa-arrows-rotate"></i
-          ></span>
+            <h4 class="font-semibold">24/7 Support</h4>
+            <p class="text-gray-600">
+              Our support team is available around the clock to asist you.
+            </p>
+          </div>
+          <!-- service card -->
+          <div class="bg-gray-100 rounded-lg p-7 relative">
+            <span
+              class="bg-yellow-100 rounded-lg text-yellow-700 p-3 absolute left-5 -top-6"
+              ><i class="fa-solid fa-shield-halved"></i
+            ></span>
 
-          <h4 class="font-semibold">Easy Returns</h4>
-          <p class="text-gray-600">
-            Not satisfied? Return your products easily within 30 days.
-          </p>
-        </div>
-      </div>
-    </section>
-    <!-- Product section -->
-    <section class="w-11/12 mx-auto">
-      <h2 class="text-4xl font-bold mb-10 text-center">Trending Now</h2>
-      <!-- spinner -->
-      <div id="spinner" class="flex justify-center items-center py-10 hidden">
-        <span class="loading loading-ring loading-xl"></span>
-      </div>
-      <!-- product card -->
-      <div id="home-products" class="grid grid-cols-1 md:grid-cols-3 gap-7">
-        <!-- card -->
-      </div>
-    </section>
+            <h4 class="font-semibold">Secure Payment</h4>
+            <p class="text-gray-600">
+              Experience safe and secure transactions with our encrypted payment
+              systems.
+            </p>
+          </div>
+          <!-- service card -->
+          <div class="bg-gray-100 rounded-lg p-7 relative">
+            <span
+              class="bg-red-100 rounded-lg text-red-700 p-3 absolute left-5 -top-6"
+              ><i class="fa-solid fa-arrows-rotate"></i
+            ></span>
 
-    <!-- Open the modal using ID.showModal() method -->
-    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-    <dialog id="product_detail" class="modal modal-bottom sm:modal-middle">
-      <div class="modal-box">
-        <div id="details-container"></div>
-        <div class="modal-action">
-          <form method="dialog">
-            <!-- if there is a button in form, it will close the modal -->
-            <button class="btn">Close</button>
-          </form>
+            <h4 class="font-semibold">Easy Returns</h4>
+            <p class="text-gray-600">
+              Not satisfied? Return your products easily within 30 days.
+            </p>
+          </div>
         </div>
-      </div>
-    </dialog>
+      </section>
+      <!-- Product section -->
+      <section class="w-11/12 mx-auto">
+        <h2 class="text-4xl font-bold mb-10 text-center">Trending Now</h2>
+        <!-- spinner -->
+        <div id="spinner" class="flex justify-center items-center py-10 hidden">
+          <span class="loading loading-ring loading-xl"></span>
+        </div>
+        <!-- product card -->
+        <div id="home-products" class="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <!-- card -->
+        </div>
+      </section>
+
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+      <dialog id="product_detail" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="details-container"></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </div>
+
     <!-- Footer section -->
     <footer
       class="footer sm:footer-horizontal bg-base-200 text-base-content p-10 mt-10"

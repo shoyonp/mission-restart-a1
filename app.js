@@ -36,7 +36,7 @@ const displayProducts = (products, containerId, limit) => {
           ${product?.rating?.rate}/${product?.rating?.count}
         </div>
       </div>
-      <p class="text-sm">
+      <p class="text-sm truncate">
         ${product?.title}
       </p>
       <p class="font-bold text-lg">
@@ -104,9 +104,17 @@ const displayProductDetails = (detail) => {
     <p class="text-3xl font-bold text-primary">
       $ ${detail?.price}
     </p>
+
+    <div class="flex gap-3 pt-4">
     <button class="btn btn-primary btn-sm">
       <i class="fa-solid fa-cart-shopping mr-2"></i> Buy Now
     </button>
+    <button class="btn btn-outline btn-sm">
+      <i class="fa-regular fa-heart mr-2"></i>
+      Wishlist
+    </button>
+  </div>
+
 </div>
   </div>
 </div>
@@ -160,7 +168,7 @@ const displayCategoryPdc = (products) => {
           ${product?.rating?.rate}/${product?.rating?.count}
         </div>
       </div>
-      <p class="text-sm">
+      <p class="text-sm truncate">
         ${product?.title}
       </p>
       <p class="font-bold text-lg">
@@ -192,7 +200,7 @@ const displayCategoryBtn = (categories) => {
     // console.log("category after loop", category);
     const button = document.createElement("button");
     button.id = category;
-    button.className = "btn btn-outline rounded-md ctg-btn";
+    button.className = "btn p-5 text-black/90 font-normal rounded-full ctg-btn capitalize";
     button.innerText = category;
     button.addEventListener("click", () => {
       loadCategoryProduct(category);
