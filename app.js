@@ -96,7 +96,7 @@ const displayProductDetails = (detail) => {
       <i class="fa-solid fa-star"></i>
       <i class="fa-regular fa-star"></i>
     </div>
-    <span class="text-sm text-gray-500">(${detail?.rating?.rate} / ${detail?.rating?.count} reviews)</span>
+    <span class="text-xs text-gray-500">(${detail?.rating?.rate} / ${detail?.rating?.count} reviews)</span>
   </div>
   <p class="text-gray-600 ">
    ${detail?.description}
