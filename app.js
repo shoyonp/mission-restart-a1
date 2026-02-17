@@ -33,7 +33,7 @@ const displayProducts = (products, containerId, limit) => {
       </p>
     </div>
     <div class="flex justify-between mt-4">
-      <button class="btn btn-outline btn-sm">
+      <button onclick="loadProductDetail(${product.id})" class="btn btn-outline btn-sm">
       <i class="fa-solid fa-eye"></i> Details
       </button>
       <button class="btn btn-primary btn-sm">
@@ -46,6 +46,61 @@ const displayProducts = (products, containerId, limit) => {
     `;
     container.append(div);
   });
+};
+
+// load product details
+const loadProductDetail = async (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  displayProductDetails(data);
+};
+
+// display product details
+const displayProductDetails = (detail) => {
+  const detailBox = document.getElementById("details-container");
+  detailBox.innerHTML = `
+
+  <div class="grid md:grid-cols-2 gap-8">
+  <div class="bg-gray-100 rounded-xl p-6 flex items-center justify-center">
+    <img src="${detail?.image}" class="max-h-72 object-contain" />
+  </div>
+  <!-- Detail -->
+  <div>
+   <div class="space-y-6">
+  <div>
+    <span class="px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-full">
+  ${detail?.category}
+    </span>
+  </div>
+  <h2 class="text-2xl font-bold">
+    ${detail?.title}
+  </h2>
+  <div class="flex items-center gap-2">
+    <div class="flex text-yellow-400 text-sm">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+    </div>
+    <span class="text-sm text-gray-500">(${detail?.rating?.rate} / ${detail?.rating?.count} reviews)</span>
+  </div>
+  <p class="text-gray-600 ">
+   ${detail?.description}
+  </p>
+    <p class="text-3xl font-bold text-primary">
+      $ ${detail?.price}
+    </p>
+    <button class="btn btn-primary btn-sm">
+      <i class="fa-solid fa-cart-shopping mr-2"></i> Buy Now
+    </button>
+</div>
+  </div>
+</div>
+
+`;
+  document.getElementById("product_detail").showModal();
 };
 
 // for remove all active class
@@ -100,7 +155,7 @@ const displayCategoryPdc = (products) => {
       </p>
     </div>
     <div class="flex justify-between mt-4">
-      <button class="btn btn-outline btn-sm">
+      <button onclick="loadProductDetail(${product.id})" class="btn btn-outline btn-sm">
       <i class="fa-solid fa-eye"></i> Details
       </button>
       <button class="btn btn-primary btn-sm">
@@ -152,7 +207,7 @@ const getProducts = async (containerId, limit) => {
   //   this will execute when clicking all product button
   const allProBtn = document.getElementById("for-all-product");
   allProBtn.addEventListener("click", () => {
-    allProBtn.classList.add("active")
+    allProBtn.classList.add("active");
     containerId = "all-products";
     displayProducts(data, containerId);
   });
