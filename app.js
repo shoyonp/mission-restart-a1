@@ -1,3 +1,14 @@
+// function of loading spinner
+const manageSpinner = (status, containerId = "all-products") => {
+  if (status == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById(containerId).classList.add("hidden");
+  } else {
+    document.getElementById(containerId).classList.remove("hidden");
+    document.getElementById("spinner").classList.add("hidden");
+  }
+};
+
 // display products function
 const displayProducts = (products, containerId, limit) => {
   const items = limit ? products.slice(0, limit) : products;
@@ -46,6 +57,7 @@ const displayProducts = (products, containerId, limit) => {
     `;
     container.append(div);
   });
+  manageSpinner(false, containerId);
 };
 
 // load product details
@@ -112,6 +124,7 @@ const removeActive = () => {
 
 // load category products
 const loadCategoryProduct = async (category) => {
+  manageSpinner(true);
   const url = `https://fakestoreapi.com/products/category/${category}`;
   const res = await fetch(url);
   const data = await res.json();
@@ -168,6 +181,7 @@ const displayCategoryPdc = (products) => {
     `;
     container.append(div);
   });
+  manageSpinner(false);
 };
 
 // display category buttons
@@ -199,6 +213,7 @@ getCategoryBtn();
 
 // get all products
 const getProducts = async (containerId, limit) => {
+  manageSpinner(true, containerId);
   const url = "https://fakestoreapi.com/products";
   const res = await fetch(url);
   const data = await res.json();
